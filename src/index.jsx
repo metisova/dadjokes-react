@@ -6,6 +6,14 @@ const App = () => {
   const [like, setLike] = useState(0);
   const [dislike, setDislike] = useState(0);
 
+  const handleLike = () => {
+    setLike(like + 1);
+  };
+
+  const handleDislike = () => {
+    setDislike(dislike + 1);
+  };
+
   return (
     <div className="container">
       <div className="joke">
@@ -28,9 +36,7 @@ const App = () => {
           <button
             id="btn-up"
             className="btn-like btn-like--up"
-            onClick={() => {
-              setLike(like + 1);
-            }}
+            onClick={handleLike}
           ></button>
           <span id="likes-up" className="likes-count likes-count--up">
             {like}
@@ -38,9 +44,7 @@ const App = () => {
           <button
             id="btn-down"
             className="btn-like btn-like--down"
-            onClick={() => {
-              setDislike(dislike + 1);
-            }}
+            onClick={handleDislike}
           ></button>
           <span id="likes-down" className="likes-count likes-count--down">
             {dislike}
