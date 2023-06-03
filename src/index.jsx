@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-
 const App = () => {
+  const [like, setLike] = useState(0);
+
   return (
     <div className="container">
       <div className="joke">
@@ -23,9 +24,15 @@ const App = () => {
           </p>
         </div>
         <div className="joke__likes">
-          <button id="btn-up" className="btn-like btn-like--up"></button>
+          <button
+            id="btn-up"
+            className="btn-like btn-like--up"
+            onClick={() => {
+              setLike(like + 1);
+            }}
+          ></button>
           <span id="likes-up" className="likes-count likes-count--up">
-            0
+            {like}
           </span>
           <button id="btn-down" className="btn-like btn-like--down"></button>
           <span id="likes-down" className="likes-count likes-count--down">
