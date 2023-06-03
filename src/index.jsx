@@ -4,6 +4,7 @@ import './style.css';
 
 const App = () => {
   const [like, setLike] = useState(0);
+  const [dislike, setDislike] = useState(0);
 
   return (
     <div className="container">
@@ -34,9 +35,15 @@ const App = () => {
           <span id="likes-up" className="likes-count likes-count--up">
             {like}
           </span>
-          <button id="btn-down" className="btn-like btn-like--down"></button>
+          <button
+            id="btn-down"
+            className="btn-like btn-like--down"
+            onClick={() => {
+              setDislike(dislike + 1);
+            }}
+          ></button>
           <span id="likes-down" className="likes-count likes-count--down">
-            0
+            {dislike}
           </span>
         </div>
       </div>
